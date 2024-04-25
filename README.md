@@ -1,5 +1,8 @@
 # Netty简介
 
+## 实现功能
+[使用netty开发文件上传与下载服务，基于http协议](https://github.com/fuzekun/netty-demo/tree/master/src/main/java/transport)
+
 ## 基础功能
 
 
