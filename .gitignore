@@ -1,0 +1,6 @@
+﻿.idea
+target
+data.txt
+dependency-reduced-pom.xml
+*.log
+*.iml

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8"> <!-- 设置为UTF-8编码 -->
+<head>
+    <style>
+        .nested {
+            display: none;
+            margin-left: 20px;
+        }
+
+        .active {
+            display: block;
+        }
+
+        li:hover {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+<ul id="myList">
+    <li><span class="caret">Item 1</span>
+        <ul class="nested">
+            <li><span class="caret">Sub-item 1</span>
+                <ul class="nested">
+                    <li>Sub-sub-item 1</li>
+                    <li>Sub-sub-item 2</li>
+                </ul>
+            </li>
+            <li>Sub-item 2</li>
+        </ul>
+    </li>
+    <li><span class="caret">Item 2</span>
+        <ul class="nested">
+            <li>Sub-item 1</li>
+            <li>Sub-item 2</li>
+        </ul>
+    </li>
+    <li>Item 3</li>
+</ul>
+<ul>
+    <li>数据源：ds1;</li>
+    <ul>
+        <li>数据库：db1;</li>
+        <ul>
+            <li>数据表:t1;</li>
+            <ul>
+                <li>数据列:</li>
+                <ul>
+                    <li>c1;</li>
+                </ul>
+                <ul>
+                    <li>c2;</li>
+                </ul>
+            </ul>
+        </ul>
+    </ul>
+    <ul>
+        <li>数据库：db2;</li>
+        <ul>
+            <li>数据表:t2;</li>
+            <ul>
+                <li>数据列:</li>
+                <ul>
+                    <li>c1;</li>
+                </ul>
+            </ul>
+        </ul>
+    </ul>
+</ul>
+
+
+<ul><li>数据源: ds1;</li><ul><li>数据库:db1;</li><ul><li>数据表:t1;</li><ul><li>数据列;</li><ul><li>c1;</li><li>c2</li></ul></ul></ul><li>数据库:db1;</li><ul><li>数据表t1;</li><ul><li>数据列;</li><ul><li>c1;</li></ul></ul><li>表:t2;</li><ul><li>数据列:</li><ul><li>c3;</li><li>c4;</li></ul></ul></ul></ul></ul>
+
+<script>
+    var toggler = document.getElementsByClassName("caret");
+    var i;
+
+    for (i = 0; i < toggler.length; i++) {
+        toggler[i].addEventListener("click", function () {
+            this.parentElement.querySelector(".nested").classList.toggle("active");
+            this.classList.toggle("caret-down");
+        });
+    }
+</script>
+</body>
+</html>
